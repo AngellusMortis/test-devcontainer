@@ -1,6 +1,6 @@
 {
     "name": "Test",
-    "image": "ghcr.io/multimediallc/mm-cli-dev:latest",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.11",
     "updateRemoteUserUID": true,
     "containerUser": "app",
     "workspaceFolder": "/opt/app",
