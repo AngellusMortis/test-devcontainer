@@ -6,10 +6,13 @@
     "workspaceFolder": "/opt/app",
     "workspaceMount": "source=${localWorkspaceFolder},target=/opt/app,type=bind,consistency=cached",
     "mounts": [
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.docker,target=/home/app/.docker,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/app/.config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/root/.config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.cloudflared,target=/home/app/.cloudflared,type=bind,consistency=cached"
     ],
     "initializeCommand": {
-        "mkdir-posix": "echo $HOME && mkdir -p $HOME/.config || true",
-        "mkdir-windows": "echo %USERPROFILE% && mkdir %USERPROFILE%/.config || true"
+        "mkdir-posix": "echo $HOME && ls -la $HOME && mkdir -p $HOME/.config $HOME/.docker $HOME/.cloudflared || true",
+        "mkdir-windows": "echo %USERPROFILE% && dir %USERPROFILE% && mkdir %USERPROFILE%/.config %USERPROFILE%/.docker %USERPROFILE%/.cloudflared || true"
     }
 }
