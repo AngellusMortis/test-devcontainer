@@ -2,17 +2,17 @@
     "name": "Test",
     "image": "mcr.microsoft.com/devcontainers/python:1-3.11",
     "updateRemoteUserUID": true,
-    "containerUser": "app",
-    "workspaceFolder": "/opt/app",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/opt/app,type=bind,consistency=cached",
+    "containerUser": "vscode",
+    "workspaceFolder": "/home/vscode/dev",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/dev,type=bind,consistency=cached",
     "mounts": [
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.docker,target=/home/app/.docker,type=bind,consistency=cached",
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/app/.config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.docker,target=/home/vscode/.docker,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/vscode/.config,type=bind,consistency=cached",
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/root/.config,type=bind,consistency=cached",
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.cloudflared,target=/home/app/.cloudflared,type=bind,consistency=cached"
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.cloudflared,target=/home/vscode/.cloudflared,type=bind,consistency=cached"
     ],
     "initializeCommand": {
-        "mkdir-posix": "echo $HOME && ls -la $HOME && mkdir -p $HOME/.config $HOME/.docker $HOME/.cloudflared || true",
-        "mkdir-windows": "echo %USERPROFILE% && dir %USERPROFILE% && mkdir %USERPROFILE%/.config %USERPROFILE%/.docker %USERPROFILE%/.cloudflared || true"
+        "mkdir-posix": "echo $HOME && ls -la $HOME && mkdir -p $HOME/.config $HOME/.docker $HOME/.cloudflared $HOME/dev || true",
+        "mkdir-windows": "echo %USERPROFILE% && dir %USERPROFILE% && mkdir %USERPROFILE%/.config %USERPROFILE%/.docker %USERPROFILE%/.cloudflared %USERPROFILE%/dev || true"
     }
 }
