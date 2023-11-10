@@ -2,6 +2,7 @@
     "name": "Test",
     "image": "ghcr.io/multimediallc/mm-cli-dev:latest",
     "updateRemoteUserUID": true,
+    "containerUser": "app",
     "mounts": [
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
     ],
