@@ -3,6 +3,8 @@
     "image": "ghcr.io/multimediallc/mm-cli-dev:latest",
     "updateRemoteUserUID": true,
     "containerUser": "app",
+    "workspaceFolder": "/opt/app",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/opt/app,type=bind,consistency=cached",
     "mounts": [
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
     ],
