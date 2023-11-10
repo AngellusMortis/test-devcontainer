@@ -3,10 +3,10 @@
     "image": "mcr.microsoft.com/devcontainers/python:1-3.11",
     "updateRemoteUserUID": true,
     "mounts": [
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/app/.config,type=bind,consistency=cached"
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
     ],
     "initializeCommand": {
-        "mkdir-posix": "mkdir -p $HOME/.config || true",
-        "mkdir-windows": "mkdir %USERPROFILE/.config || true"
+        "mkdir-posix": "echo $HOME && mkdir -p $HOME/.config || true",
+        "mkdir-windows": "echo %USERPROFILE% && mkdir %USERPROFILE%/.config || true"
     }
 }
