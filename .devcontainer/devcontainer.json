@@ -2,7 +2,8 @@
     "name": "Test",
     "build": {
         "dockerfile": "./Dockerfile",
-        "context": ".."
+        "context": "..",
+        "args": {}
     },
     "updateRemoteUserUID": true,
     "containerUser": "vscode",
