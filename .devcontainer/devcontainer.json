@@ -1,8 +1,8 @@
 {
     "name": "Test",
     "build": {
-         "dockerfile": "./Dockerfile",
-         "context": ".."
+        "dockerfile": "./Dockerfile",
+        "context": ".."
     },
     "updateRemoteUserUID": true,
     "containerUser": "vscode",
@@ -10,7 +10,7 @@
         "mkdir-posix": "echo $HOME && ls -la $HOME && mkdir -p $HOME/.config $HOME/.docker $HOME/.cloudflared $HOME/dev || true",
         "mkdir-windows": "echo %USERPROFILE% && dir %USERPROFILE% && mkdir %USERPROFILE%/.config %USERPROFILE%/.docker %USERPROFILE%/.cloudflared %USERPROFILE%/dev || true"
     },
-    "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-    }
+    // "features": {
+    //     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    // }
 }
